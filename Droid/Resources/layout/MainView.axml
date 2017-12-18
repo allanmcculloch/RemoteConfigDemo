@@ -12,7 +12,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Reset"
+        android:text="My Button"
         android:textSize="40dp"
-        local:MvxBind="Click ResetTextCommand" />
+        local:MvxBind="BackgroundColor NativeColor(ButtonColour)" />
 </LinearLayout>

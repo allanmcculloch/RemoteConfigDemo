@@ -16,8 +16,16 @@ namespace RemoteConfigDemo.iOS.Views
             base.ViewDidLoad();
 
             var set = this.CreateBindingSet<MainView, ViewModels.MainViewModel>();
+
             set.Bind(TextField).To(vm => vm.Text);
-            set.Bind(Button).To(vm => vm.ResetTextCommand);
+
+            set.Bind(Button).To(vm => vm.ButtonCommand);
+
+            set.Bind(Button)
+               .For(field => field.BackgroundColor)
+               .To(vm => vm.ButtonColour)
+               .WithConversion("NativeColor");
+            
             set.Apply();
         }
     }

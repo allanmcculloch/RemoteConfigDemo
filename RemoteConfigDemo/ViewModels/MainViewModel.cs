@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform.UI;
 
 namespace RemoteConfigDemo.ViewModels
 {
@@ -10,23 +11,31 @@ namespace RemoteConfigDemo.ViewModels
         }
         
         public override Task Initialize()
-        {
-            //TODO: Add starting logic here
-		    
+        {   
             return base.Initialize();
         }
         
-        public IMvxCommand ResetTextCommand => new MvxCommand(ResetText);
-        private void ResetText()
+        public IMvxCommand ButtonCommand => new MvxCommand(ButtonClick);
+
+        private void ButtonClick()
         {
-            Text = "Hello MvvmCross";
+            Text = "I clicked the button";
         }
 
-        private string _text = "Hello MvvmCross";
+        private string _text = "";
+
         public string Text
         {
             get { return _text; }
             set { SetProperty(ref _text, value); }
+        }
+
+        public MvxColor ButtonColour
+        {
+            get
+            {
+                return new MvxColor(255, 100, 0);
+            }
         }
     }
 }
