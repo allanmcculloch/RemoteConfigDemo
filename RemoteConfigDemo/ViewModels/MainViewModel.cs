@@ -34,7 +34,7 @@ namespace RemoteConfigDemo.ViewModels
         {
             get
             {
-                return new MvxColor(255, 100, 0);
+                return new MvxColor(0, 255, 0);
             }
         }
     }
